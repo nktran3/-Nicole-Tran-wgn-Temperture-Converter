@@ -36,6 +36,13 @@ class MainActivity : AppCompatActivity() {
                     fahrenheitSeekBar.progress = fahrenheit.toInt() // update fahrenheit
                     celsiusOutput.text = "%.2f°C".format(celsius)
                     fahrenheitOutput.text = "%.2f°F".format(fahrenheit)
+
+                    // update message
+                    if  (celsius <= 20.0){
+                        message.text =  getString(R.string.warmer)
+                    }else {
+                        message.text =  getString(R.string.colder)
+                    }
                 }
             }
 
@@ -55,6 +62,13 @@ class MainActivity : AppCompatActivity() {
                     celsiusSeekBar.progress = celsius.toInt() // update celsius
                     celsiusOutput.text = "%.2f°C".format(celsius)
                     fahrenheitOutput.text = "%.2f°F".format(fahrenheit)
+
+                    // update message
+                    if  (celsius <= 20.0){
+                        message.text =  getString(R.string.warmer)
+                    }else {
+                        message.text =  getString(R.string.colder)
+                    }
 
                 }
             }
