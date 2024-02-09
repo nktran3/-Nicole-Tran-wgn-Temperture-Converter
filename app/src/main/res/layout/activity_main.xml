@@ -8,6 +8,7 @@
     android:background="@drawable/margin_border"
     android:layout_margin="10sp">
 
+    <!--celsius text-->
     <TextView
         android:id="@+id/celsius"
         android:layout_width="wrap_content"
@@ -16,12 +17,14 @@
         android:text="@string/celsius"
         android:textSize="60sp"
         android:textStyle="italic|bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/celsius_seekbar"/>
 
+    <!--celsius seekbar-->
     <SeekBar
         android:id="@+id/celsius_seekbar"
         android:layout_width="350sp"
@@ -30,26 +33,29 @@
         android:max="100"
         android:thumbTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/celsius" />
 
+    <!--celsius output-->
     <TextView
         android:id="@+id/celsius_output"
-        android:layout_width="150sp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/blue_border"
         android:gravity="center"
         android:padding="10sp"
         android:text="@string/celsius_output"
+        android:textColor="@color/blue"
         android:textSize="50sp"
         android:textStyle="bold|italic"
-        android:textColor="@color/blue"
-        android:background="@drawable/blue_border"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/celsius_seekbar" />
 
+    <!--fahrenheit text-->
     <TextView
         android:id="@+id/fahrenheit"
         android:layout_width="wrap_content"
@@ -57,6 +63,7 @@
         android:text="@string/fahrenheit"
         android:textSize="60sp"
         android:textStyle="italic|bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
@@ -64,37 +71,41 @@
         app:layout_constraintTop_toBottomOf="@id/celsius_output"
         app:layout_constraintVertical_bias="0.063" />
 
+    <!--fahrenheit seekbar-->
     <SeekBar
         android:id="@+id/fahrenheit_seekbar"
         android:layout_width="350sp"
         android:layout_height="50sp"
         android:layout_marginTop="12dp"
-        android:max="100"
+        android:min="32"
+        android:max="212"
         android:thumbTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fahrenheit" />
 
+    <!--fahrenheit output-->
     <TextView
         android:id="@+id/fahrenheit_output"
-        android:layout_width="150sp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/blue_border"
         android:gravity="center"
         android:padding="10sp"
-        android:text="@string/celsius_output"
+        android:text="@string/fahrenheit_output"
+        android:textColor="@color/blue"
         android:textSize="50sp"
         android:textStyle="bold|italic"
-        android:textColor="@color/blue"
-        android:background="@drawable/blue_border"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fahrenheit_seekbar" />
 
+    <!--interesting message-->
     <TextView
         android:id="@+id/message"
-        android:layout_width="350sp"
+        android:layout_width="320sp"
         android:layout_height="60sp"
         android:layout_marginTop="24dp"
         android:background="@drawable/message_border"
