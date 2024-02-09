@@ -32,8 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/celsius"
-        app:layout_constraintBottom_toBottomOf=""/>
+        app:layout_constraintTop_toBottomOf="@id/celsius" />
 
     <TextView
         android:id="@+id/celsius_output"
@@ -59,10 +58,23 @@
         android:textSize="60sp"
         android:textStyle="italic|bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.00"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/celsius_output"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <SeekBar
+        android:id="@+id/fahrenheit_seekbar"
+        android:layout_width="350sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="12dp"
+        android:max="100"
+        android:thumbTint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fahrenheit" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
