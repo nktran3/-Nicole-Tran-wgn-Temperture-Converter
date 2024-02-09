@@ -75,6 +75,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fahrenheit" />
 
+    <TextView
+        android:id="@+id/fahrenheit_output"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:padding="10sp"
+        android:text="@string/celsius_output"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/blue"
+        android:background="@drawable/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fahrenheit_seekbar" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
