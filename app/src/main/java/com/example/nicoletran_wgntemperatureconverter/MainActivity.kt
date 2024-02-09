@@ -31,8 +31,11 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar, celsiusProgress: Int, fromUser: Boolean) {
                 // if user changes celsius Seekbar, change fahrenheit SeekBar
                 if (fromUser) {
-                    val fahrenheit = celsiusToFahrenheit(celsiusProgress.toDouble()) // call celsiusToFahrenheit function
+                    val celsius = celsiusProgress.toDouble()
+                    val fahrenheit = celsiusToFahrenheit(celsius) // call celsiusToFahrenheit function
                     fahrenheitSeekBar.progress = fahrenheit.toInt() // update fahrenheit
+                    celsiusOutput.text = "%.2f°C".format(celsius)
+                    fahrenheitOutput.text = "%.2f°F".format(fahrenheit)
                 }
             }
 
@@ -47,8 +50,12 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar, fahrenheitProgress: Int, fromUser: Boolean) {
                 // if user changes fahrenheit Seekbar, change celsius SeekBar
                 if (fromUser) {
-                    val celsius = fahrenheitToCelsius(fahrenheitProgress.toDouble()) // call fahrenheitToCelsius function
+                    val fahrenheit = fahrenheitProgress.toDouble()
+                    val celsius = fahrenheitToCelsius(fahrenheit) // call fahrenheitToCelsius function
                     celsiusSeekBar.progress = celsius.toInt() // update celsius
+                    celsiusOutput.text = "%.2f°C".format(celsius)
+                    fahrenheitOutput.text = "%.2f°F".format(fahrenheit)
+
                 }
             }
 
