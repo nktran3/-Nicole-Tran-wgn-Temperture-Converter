@@ -24,6 +24,15 @@ class MainActivity : AppCompatActivity() {
         fahrenheitOutput = findViewById(R.id.fahrenheit_output)
         message = findViewById(R.id.message)
 
+        val initialFahrenheit = 32
+        fahrenheitSeekBar.progress = initialFahrenheit
+
+        val initialCelsius = fahrenheitToCelsius(initialFahrenheit.toDouble())
+        celsiusSeekBar.progress = initialCelsius.toInt()
+
+        celsiusOutput.text = "%.2f°C".format(initialCelsius)
+        fahrenheitOutput.text = "%.2f°F".format(initialFahrenheit.toDouble())
+
         // set celsius setOnSeekBarChangeListener
         // citation: https://developer.android.com/reference/android/widget/SeekBar.OnSeekBarChangeListener
         // citation: https://www.geeksforgeeks.org/seekbar-in-kotlin/
@@ -45,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar) {} // notification that the user has started a touch gesture
             override fun onStopTrackingTouch(seekBar: SeekBar) {} // notification that the user has finished a touch gesture
         })
@@ -57,7 +65,13 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar, fahrenheitProgress: Int, fromUser: Boolean) {
                 // if user changes fahrenheit Seekbar, change celsius SeekBar
                 if (fromUser) {
-                    val fahrenheit = fahrenheitProgress.toDouble()
+                    var fahrenheit = fahrenheitProgress.toDouble()
+
+                    if (fahrenheit < 32) {
+                        fahrenheit = 32.0
+                        seekBar.progress = 32 // Set the Fahrenheit seek bar to 32
+                    }
+
                     val celsius = fahrenheitToCelsius(fahrenheit) // call fahrenheitToCelsius function
                     celsiusSeekBar.progress = celsius.toInt() // update celsius
                     celsiusOutput.text = "%.2f°C".format(celsius)
@@ -72,7 +86,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar) {} // notification that the user has started a touch gesture
             override fun onStopTrackingTouch(seekBar: SeekBar) {} // notification that the user has finished a touch gesture
         })

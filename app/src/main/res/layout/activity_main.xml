@@ -77,7 +77,6 @@
         android:layout_width="350sp"
         android:layout_height="50sp"
         android:layout_marginTop="12dp"
-        android:min="32"
         android:max="212"
         android:thumbTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
